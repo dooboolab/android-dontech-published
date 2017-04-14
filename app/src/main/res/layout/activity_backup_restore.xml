@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.hyochan.memocast.activities.BackupRestoreActivity">
+    <!-- title layout -->
+    <include
+        android:id="@+id/rel_title"
+        layout="@layout/title_back"/>
+    <!-- body -->
+    <ScrollView
+        android:background="@color/background"
+        android:layout_below="@+id/rel_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="org.hyochan.dontech.activities.SettingAnnounceActivity">
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txt_info"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:text="@string/alert_backup_and_restore"
+                android:textSize="15.3sp"
+                android:lineSpacingExtra="5dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!-- layout : backup -->
+            <RelativeLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentTop="true"
+                    android:background="#CCC"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"/>
+                <TextView
+                    android:id="@+id/txt_lbl_backup"
+                    android:layout_margin="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/backup"/>
+                <Button
+                    android:id="@+id/btn_backup"
+                    android:background="@drawable/sel_btn_solid"
+                    android:text="@string/do_backup"
+                    android:textSize="13.3sp"
+                    android:textColor="@drawable/sel_txt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp" />
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_below="@+id/txt_lbl_backup"
+                    android:background="#CCC"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"/>
+            </RelativeLayout>
+            <!-- layout : restore -->
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txt_lbl_restore"
+                    android:layout_margin="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/restore"/>
+                <Button
+                    android:id="@+id/btn_restore"
+                    android:background="@drawable/sel_btn_solid"
+                    android:text="@string/do_restore"
+                    android:textSize="13.3sp"
+                    android:textColor="@drawable/sel_txt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp" />
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_below="@+id/txt_lbl_restore"
+                    android:background="#CCC"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

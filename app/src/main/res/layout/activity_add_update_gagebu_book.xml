@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_gagebu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.hyochan.dontech.activities.AddUpdateGagebuBookActivity">
+    <include
+        android:id="@+id/title"
+        layout="@layout/title_save_delete"/>
+    <LinearLayout
+        android:layout_below="@+id/title"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- 가계부 명 입력 박스 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="@string/plz_write_gagebu_name"
+                android:inputType="text"
+                android:maxLength="15"
+                android:padding="8dp"
+                android:maxLines="1"
+                android:textColorHint="#b5b5b7"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/edit_name"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:background="#ffffff"
+                android:src="@drawable/sel_ic_x_alt" />
+        </RelativeLayout>
+        <!-- 아이콘 선택 박스 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/sudBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="@color/colorPrimaryDark"/>
+            <!--android:descendantFocusability="blocksDescendants"-->
+            <GridView
+                android:id="@+id/grid_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="5dp"
+                android:verticalSpacing="3dp"
+                android:numColumns="4"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

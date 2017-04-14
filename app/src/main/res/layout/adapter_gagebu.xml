@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin"
+    android:layout_width="match_parent"
+    android:background="@drawable/sel_list"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <ImageView
+            android:id="@+id/img_category"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_gagebu_card"
+            android:layout_width="38dp"
+            android:layout_height="38dp" />
+        <TextView
+            android:id="@+id/txt_cost"
+            android:maxLines="1"
+            android:layout_toRightOf="@+id/img_category"
+            android:textSize="18.3sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/income"
+            android:text="30000원"/>
+        <TextView
+            android:id="@+id/txt_datetime"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:layout_toLeftOf="@+id/txt_cost"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="25dp"
+            android:textSize="17.3sp"
+            android:text="17일 - 4:15"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <!-- 세부 내용 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#05000000"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rel_detail"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@+id/img_thumb"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:id="@+id/txt_detail"
+                android:layout_marginBottom="5dp"
+                android:text="asdfasdfasdfasdfasdfasdf"
+                android:layout_marginRight="30dp"
+                android:textSize="13.3sp"
+                android:textColor="@color/colorPrimary"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_marginBottom="5dp"
+                android:text="asdfasdfasdfasdf"
+                android:layout_marginRight="30dp"
+                android:textSize="13.3sp"
+                android:layout_below="@id/txt_detail"
+                android:textColor="@color/colorPrimary"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/img_thumb"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="7dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+        <View
+            android:layout_alignParentBottom="true"
+            android:background="@color/ccc"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"/>
+    </RelativeLayout>
+</LinearLayout>

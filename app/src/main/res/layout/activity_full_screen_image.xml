@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.hyochan.dontech.activities.FullScreenImageActivity">
+    <include
+        android:id="@+id/rel_title"
+        layout="@layout/title_back"/>
+    <RelativeLayout
+        android:layout_below="@id/rel_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <org.hyochan.hclibrary.TouchImageView
+            android:id="@+id/touch_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"/>
+    </RelativeLayout>
+</RelativeLayout>

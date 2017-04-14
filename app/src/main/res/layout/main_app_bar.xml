@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- title -->
+    <RelativeLayout
+        android:id="@+id/rel_title"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/rel_hamburger"
+            android:background="@drawable/sel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_hamburger"
+                android:layout_centerVertical="true"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_hamburger"/>
+        </RelativeLayout>
+        <!-- 가계부 명 표시 -->
+        <TextView
+            android:id="@+id/txt_gagebu_name"
+            android:layout_toRightOf="@+id/rel_hamburger"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
+            android:text="가계부 명"
+            android:textSize="21.3dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!-- 날짜 선택 표시 -->
+        <RelativeLayout
+            android:id="@+id/rel_date"
+            android:layout_toRightOf="@+id/txt_gagebu_name"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txt_date"
+                android:textColor="@drawable/sel_txt_reverse"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textSize="19.6sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    <!-- tab -->
+    <LinearLayout
+        android:id="@+id/lin_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/tabBackground"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rel_title"
+        android:weightSum="1">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/sliding_tabs"
+            android:background="@color/tabBackground"
+            app:tabBackground="@color/tabBackground"
+            app:tabTextColor="@color/txt_n"
+            app:tabSelectedTextColor="@android:color/black"
+            app:tabIndicatorColor="@color/pink_n"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <org.hyochan.dontech.utils.MyViewPager
+        android:id="@+id/view_pager"
+        android:layout_below="@+id/lin_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_monthly"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <!-- fab -->
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_expandDirection="up"
+        fab:fab_addButtonColorNormal="@color/colorPrimaryLight"
+        fab:fab_addButtonColorPressed="@color/colorPrimary"
+        fab:fab_addButtonPlusIconColor="@android:color/white"
+        fab:fab_addButtonSize="normal"
+        fab:fab_labelStyle="@style/fab_menu_style"
+        fab:fab_labelsPosition="left"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_size="normal"
+            fab:fab_title="@string/income"
+            fab:fab_colorPressed="@color/white_pressed"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_size="normal"
+            fab:fab_title="@string/consume"
+            fab:fab_colorPressed="@color/white_pressed"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_statistics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_size="normal"
+            fab:fab_title="@string/statistics"
+            fab:fab_colorPressed="@color/white_pressed"/>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    <com.fsn.cauly.CaulyAdView
+        xmlns:app="http://schemas.android.com/apk/res/org.hyochan.dontech"
+        android:layout_above="@+id/fam"
+        android:id="@+id/cauly_ad_view"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:appcode="s5oEaycX"
+        app:effect="RightSlide"
+        app:dynamicReloadInterval="true"
+        app:reloadInterval="3"
+        app:bannerHeight="Fixed" />
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 검색 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- 검색 -->
+        <EditText
+            android:id="@+id/edit_search"
+            android:inputType="textNoSuggestions"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColorHint="@color/txt_color_hint"
+            android:background="@drawable/rnd_search_box"
+            android:layout_centerVertical="true"
+            android:paddingLeft="32.5dp"
+            android:paddingRight="32.5dp"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:hint="@string/write_search_words"
+            android:maxLines="1"/>
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_alignLeft="@+id/edit_search"
+            android:src="@drawable/ic_search"/>
+        <ImageView
+            android:id="@+id/img_erase"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/edit_search"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_circle_close" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- 리스트 -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- 없을 때 나오는 화면 -->
+        <RelativeLayout
+            android:id="@+id/rel_empty"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background" >
+            <TextView
+                android:id="@+id/txt_empty"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/this_mon_no_usage"
+                android:textColor="@color/ccc"
+                android:textSize="16.3sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

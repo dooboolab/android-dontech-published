@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.hyochan.dontech">
+
+    <permission
+        android:name="org.hyochan.dontech.googlemap.locationapi.maps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.hyochan.dontech.googlemap.locationapi.maps.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:exported="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 버전 24이상부턴 uri로 미디어 접근하려면 프로바이더 써야함 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AddUpdateGagebuBookActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.INSERT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities_dialogs.DatePickerDialog"
+            android:launchMode="singleTask"
+            android:theme="@style/MyDialogTheme" />
+        <activity
+            android:name=".activities_dialogs.TimePickerDialog"
+            android:launchMode="singleTask"
+            android:theme="@style/MyDialogTheme" />
+        <activity android:name=".activities.SettingActivity" />
+        <activity android:name=".activities.SettingAnnounceActivity" />
+        <activity android:name=".activities.SettingFAQActivity" />
+        <activity
+            android:name=".activities.MapsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activities.AddUpdateGagebuActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".activities.BackupRestoreActivity" />
+        <activity
+            android:name=".activities.FullScreenImageActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activities.StatisticsActivity" />
+
+        <receiver
+            android:name=".receivers.SMSReceiver"
+            android:enabled="true"
+            android:exported="false">
+<!--
+            Service에서 처리
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+-->
+        </receiver>
+        <service
+            android:name=".services.SMSService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

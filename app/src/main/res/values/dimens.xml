@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- NAVIGATION -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+
+    <!-- TITLE -->
+    <dimen name="title_txt_size">21.3sp</dimen>
+
+    <!-- DEFAULT VALUES -->
+    <dimen name="line_height">0.3dp</dimen>
+
+    <!-- HOME FRAGMENT -->
+    <dimen name="footer_line_horizontal_margin">15dp</dimen>
+    <dimen name="footer_icon_margin_left">23dp</dimen>
+    <dimen name="footer_icon_size">30dp</dimen>
+    <dimen name="footer_txt_label_marginHorizontal">20dp</dimen>
+    <dimen name="footer_txt_won_marginLeft">5dp</dimen>
+    <dimen name="footer_txt_won_marginRight">35dp</dimen>
+    <dimen name="footer_txt_size">17sp</dimen>
+
+    <!-- Date Time Dialog -->
+    <dimen name="date_dialog_width">300dp</dimen>
+    <dimen name="date_dialog_btn_txt_size">15.3sp</dimen>
+    <dimen name="date_dialog_btn_height">48dp</dimen>
+    <dimen name="date_dialog_margin">10dp</dimen>
+    <dimen name="date_picker_txt_size">11.5sp</dimen>
+</resources>
